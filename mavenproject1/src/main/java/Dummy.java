@@ -10,7 +10,7 @@
  */
 public class Dummy {
     
-    private int HENK = 2394;
+    private final int HENK = 2394;
     
     
 }
