@@ -1,4 +1,4 @@
-package Workshop2.workshop2;
+package Workshop2.workshop2.objects;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Table;
@@ -7,7 +7,6 @@ import javax.persistence.Table;
 @Table (name = "address_details")
 public class Address {
 		
-	private int addressId;
 	private String street;
 	private String zip;
 	private String city ;
@@ -16,12 +15,11 @@ public class Address {
 	
 	
 	public Address(){
-		this(0,null,null,null,null,0);
+		this(null,null,null,null,0);
 	}
 	
 	
-	public Address(int addressId, String street, String zip, String city, String country, int houseNumber){
-		this.addressId=addressId;
+	public Address(String street, String zip, String city, String country, int houseNumber){
 		this.street = street;
 		this.zip = zip;
 		this.city = city ;
@@ -29,8 +27,6 @@ public class Address {
 		this.houseNumber = houseNumber;
 	}
 	
-	public int getID(){return addressId;}
-	public void setID(int addressId){this.addressId= addressId;}
 	
 	public String getStreet(){return street;}
 	public void setStreet(String street){this.street = street;}

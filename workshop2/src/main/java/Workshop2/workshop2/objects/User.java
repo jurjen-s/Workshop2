@@ -1,14 +1,12 @@
-package Workshop2.workshop2;
+package Workshop2.workshop2.objects;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
-import main.Account;
-
 
 @Entity
 @Table (name = "user_details")
@@ -17,22 +15,43 @@ public class User {
 	private int id;
 	@Embedded
 	private Address address;
-	@Transient
+	@OneToOne
 	private Account account;
+	@Embedded
+	private UserRole userRole;
 	private String firstName;
 	private String middleName;
 	private String lastName;
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
+	}
+
+	
 
 	public User() {
-		this(0, null, null, null, null, null);
+		this(null, null, null, null, null);
 	}
 	
-	public User(int id, String firstName, String middleName, String lastName) {
-		this(id, firstName, middleName, lastName, null, null);
+	public User(String firstName, String middleName, String lastName) {
+		this(firstName, middleName, lastName, null, null);
 	}
 	
-	public User(int id, String firstName, String middleName, String lastName, Account account, Address address) {
-		this.id = id;
+	public User(String firstName, String middleName, String lastName, Account account, Address address) {
+		
 		this.account = account;
 		this.address = address;
 		this.firstName = firstName;
