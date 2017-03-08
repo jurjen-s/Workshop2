@@ -20,7 +20,7 @@
         <property name="connection.password">tiger</property>
 
         <!-- JDBC connection pool (use the built-in) -->
-        <property name="connection.pool_size">1</property>
+        <property name="connection.pool_size">5</property>
 
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -36,13 +36,13 @@
 
         <!-- Names the annotated entity class -->
         <mapping class="Workshop2.workshop2.objects.User"/>
-         <mapping class="Workshop2.workshop2.objects.UserRole"/>
-          <mapping class="Workshop2.workshop2.objects.Account"/>
+           <mapping class="Workshop2.workshop2.objects.Account"/>
            <mapping class="Workshop2.workshop2.objects.Address"/>
-            <mapping class="Workshop2.workshop2.objects.Bill"/>
-             <mapping class="Workshop2.workshop2.objects.Cheese"/>
-              <mapping class="Workshop2.workshop2.objects.Order"/>
-               <mapping class="Workshop2.workshop2.objects.OrderLine"/>
+           <mapping class="Workshop2.workshop2.objects.Cheese"/>
+           <mapping class="Workshop2.workshop2.objects.OrderLine"/>
+           <mapping class="Workshop2.workshop2.objects.Order"/>
+           <mapping class="Workshop2.workshop2.objects.Bill"/>
+           
               
            
 

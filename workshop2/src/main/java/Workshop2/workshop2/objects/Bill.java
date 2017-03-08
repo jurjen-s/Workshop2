@@ -1,5 +1,6 @@
 package Workshop2.workshop2.objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,30 +13,59 @@ import javax.persistence.Table;
 public class Bill {
 
 	@Id	
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int id;
 	double totalPrice;
-	@OneToOne
+	int pinCode;
+	String accountNumber;
+	@OneToOne (cascade = {CascadeType.ALL})
 	Order order;
-	@OneToOne
-	User user;
 	
 	public Bill() {
-		this(0.0,null,null);
+		this(0.0,0,null,null);
 	}
 	
-	public Bill(double totalPrice, Order order, User user) {
+	
+	public Bill(double totalPrice, int pinCode, String accountNumber, Order order) {
+		super();
 		this.totalPrice = totalPrice;
+		this.pinCode = pinCode;
+		this.accountNumber = accountNumber;
 		this.order = order;
-		this.user = user;
 	}
+
 	
+
 	public int getId() {
 		return id;
 	}
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
+	public int getPinCode() {
+		return pinCode;
+	}
+
+
+	public void setPinCode(int pinCode) {
+		this.pinCode = pinCode;
+	}
+
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+
 	public double getTotalPrice() {
 		return totalPrice;
 	}
@@ -48,12 +78,7 @@ public class Bill {
 	public void setOrder(Order order) {
 		this.order = order;
 	}
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
+	
 	
 	
 }

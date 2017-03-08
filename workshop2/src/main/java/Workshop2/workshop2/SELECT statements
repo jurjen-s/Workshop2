@@ -1,0 +1,10 @@
+SELECT * FROM user_details;
+SELECT * FROM account;
+SELECT * FROM cheese;
+SELECT * FROM order_line;
+select * from hibernate_sequence;
+SELECT * FROM ordertable_that_works;
+SELECT * FROM ordertable_that_works_order_line;
+SELECT * FROM bill;
+
+// de selectstatement die je kunt lopen om te kijken of het goed opgeslagen is in de database

@@ -15,18 +15,17 @@ public class Account {
 	int Id;
 	String userName;
 	String password;
-	@Embedded
-	UserRole userRole;
+	//UserRole userRole;
 	
 	
 	public Account() {
-		this(null,null,null);
+		this(null,null);
 	}
 
-	public Account(String userName, String password, UserRole userRole) {
+	public Account(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
-		this.userRole = userRole;
+		//this.userRole = userRole;
 	}
 	
 	public String getUserName() {
@@ -40,12 +39,6 @@ public class Account {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public UserRole getUserRole() {
-		return userRole;
-	}
-	public void setUserRole(UserRole userRole) {
-		this.userRole = userRole;
 	}
 
 }

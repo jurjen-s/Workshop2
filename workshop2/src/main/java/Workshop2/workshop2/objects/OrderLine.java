@@ -1,5 +1,6 @@
 package Workshop2.workshop2.objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,9 +14,9 @@ import javax.persistence.Table;
 public class OrderLine {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int id;
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	Cheese cheese;
 	double totalPrice;
 	int amount;
@@ -63,7 +64,4 @@ public class OrderLine {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
-	
-	
 }
